@@ -1,0 +1,15 @@
+{
+  "name": "devops",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./main/index.js",
+    "test": "./node_modules/.bin/mocha ./test/**/*.js",
+    "unit": "./node_modules/.bin/mocha ./test/unit/*.js",
+    "integration": "./node_modules/.bin/mocha --timeout 10000 ./test/integration/*.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "mocha": "^6.0.2",
+    "node-fetch": "^2.3.0"
+  }
+}

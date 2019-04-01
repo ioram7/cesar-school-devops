@@ -1,0 +1,23 @@
+version: '3'
+services:
+  gitlab:
+    image: 'gitlab/gitlab-ce:latest'
+    restart: always
+    hostname: 'gitlab'
+    ports:
+    - '80-80'
+    - '443:443'
+    - '22:22'
+    volumes:
+    - '~/cesar/devops/exercicio3/srv/gitlab/config:/etc/gitlab'
+    - '~/cesar/devops/exercicio3/srv/gitlab/logs:/var/log/gitlab'
+    - '~/cesar/devops/exercicio3/srv/gitlab/data:/var/opt/gitlab'
+  jenkins:
+    image: 'jenkins-devops:latest'
+    ports:
+    - '8080:8080'
+    - '50000:50000'
+    volumes:
+    - '~/cesar/devops/exercicio3/srv/jenkins:/var/jenkins_home'
+    - '/var/run/docker.sock:/var/run/docker.sock'
+    - '/usr/local/bin/docker:/usr/bin/docker'
