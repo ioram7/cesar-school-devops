@@ -36,7 +36,7 @@ node {
         unstash 'app'
         withAWS(credentials: 'aws-ioram') {
             env.AWS_DEFAULT_REGION = 'us-east-2'
-            s3Upload (bucket:"aws-tiago",
+            s3Upload (bucket:"devops-school",
                 path:'devops/',
                 includePathPattern: '**/*',
                 excludePathPattern:'**/*.svg')
