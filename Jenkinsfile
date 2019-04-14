@@ -35,7 +35,7 @@ node {
         deleteDir()
         unstash 'app'
         withAWS(credentials: 'aws-ioram') {
-            env.AWS_DEFAULT_REGION = 'us-east-2'
+            env.AWS_DEFAULT_REGION = 'us-east-1'
             s3Upload (bucket:"devops-school",
                 path:'devops/',
                 includePathPattern: '**/*',
