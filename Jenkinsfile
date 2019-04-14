@@ -34,7 +34,7 @@ node {
         echo 'AWS...'
         deleteDir()
         unstash 'app'
-        withAWS(credentials: 'aws-id') {
+        withAWS(credentials: 'aws-ioram') {
             env.AWS_DEFAULT_REGION = 'us-east-2'
             s3Upload (bucket:"aws-tiago",
                 path:'devops/',
